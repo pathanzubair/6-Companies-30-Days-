@@ -1,0 +1,12 @@
+class Solution {
+public:
+    bool checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
+        int x_near = max(x1, min(x2, xCenter));
+        int y_near = max(y1, min(y2, yCenter));
+
+        int x_d = x_near - xCenter;
+        int y_d = y_near - yCenter;
+
+        return pow(x_d,2)+pow(y_d,2) <= pow(radius, 2);
+    }
+};
